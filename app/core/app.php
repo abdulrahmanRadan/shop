@@ -5,11 +5,12 @@ class App
     // protected Because i don't want them to be accessed to be able to access
     protected $controller = "home";
     protected $method = "index";
+    protected $params; // from the kay of  array is be starts at 2 we make it start at 0 
 
     public function __construct()
     {
         $url = $this->parseURL();
-        show($url);
+        // show($url);
 
         if (file_exists("../app/controllers/" . strtolower($url[0]) . ".php")) {
             $this->controller = strtolower($url[0]);
@@ -25,7 +26,10 @@ class App
                 unset($url[1]);
             }
         }
-        show($url);
+
+        $this->params = (count($url) > 0) ? $url : ["home"];
+        call_user_func_array([$this->controller, $this->method], $this->params);
+        // show(array_values($url));
     } // end __construct
 
     private function parseURL()
