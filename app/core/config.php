@@ -8,6 +8,7 @@ define('DB_USER', "root");
 define('DB_PASS', "");
 define('DB_type', "mysql");
 define('DB_HOST', "localhost");
+define('OPTIONS', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf-8",));
 
 define('THEME', 'eshop/');
 
