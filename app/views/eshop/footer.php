@@ -148,7 +148,7 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+                <p class="pull-left">Copyright © 2023 E-SHOPPER Inc. All rights reserved.</p>
                 <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
             </div>
         </div>
@@ -158,12 +158,12 @@
 
 
 
-<script src="<?= ASSETS ?>eshop/js/jquery.js"></script>
-<script src="<?= ASSETS ?>eshop/js/bootstrap.min.js"></script>
-<script src="<?= ASSETS ?>eshop/js/jquery.scrollUp.min.js"></script>
-<script src="<?= ASSETS ?>eshop/js/price-range.js"></script>
-<script src="<?= ASSETS ?>eshop/js/jquery.prettyPhoto.js"></script>
-<script src="<?= ASSETS ?>eshop/js/main.js"></script>
+<script src="<?= ASSETS . THEME ?>js/jquery.js"></script>
+<script src="<?= ASSETS . THEME ?>js/bootstrap.min.js"></script>
+<script src="<?= ASSETS . THEME ?>js/jquery.scrollUp.min.js"></script>
+<script src="<?= ASSETS . THEME ?>js/price-range.js"></script>
+<script src="<?= ASSETS . THEME ?>js/jquery.prettyPhoto.js"></script>
+<script src="<?= ASSETS . THEME ?>js/main.js"></script>
 </body>
 
 </html>
