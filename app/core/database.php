@@ -36,12 +36,12 @@ class Database
     {
         // stm => statement
         $stm = self::$conaction->prepare($query);
-        $result = $stm->execute();
+        $result = $stm->execute($data);
         // fetchAll() => 
         // PDO::FETCH_OBJ => this self connection , this is a static value of the PDO class
         if ($result) {
             $data = $stm->fetchAll(PDO::FETCH_OBJ);
-            if (is_array($data)) {
+            if (is_array($data) && count($data) > 0) {
                 return $data;
             }
         }
@@ -56,7 +56,7 @@ class Database
     {
         // stm => statement
         $stm = self::$conaction->prepare($query);
-        $result = $stm->execute();
+        $result = $stm->execute($data);
         // fetchAll() => 
         // PDO::FETCH_OBJ => this self connection , this is a static value of the PDO class
         if ($result) {

@@ -5,7 +5,7 @@ class Signup extends Controller
     {
         $data['page_title'] = "signup";
         if ($_SERVER['REQUEST_METHOD']) {
-            show($_POST);
+            // show($_POST);
             $User = $this->load_model("User");
             /**
              * signup($_POST) => this is from user.class::signup()

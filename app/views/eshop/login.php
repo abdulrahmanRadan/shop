@@ -6,14 +6,14 @@
 			<div class="col-sm-4 col-sm-offset-1" style="float: none; display:inline-block;">
 				<div class="login-form"><!--login form-->
 					<h2>Login to your account</h2>
-					<form action="#">
-						<input type="text" placeholder="Name" />
-						<input type="email" placeholder="Email Address" />
+					<form method="post">
+						<input type="email" name="email" placeholder="Email Address" />
+						<input type="password" name="password" placeholder="password" />
 						<span>
 							<input type="checkbox" class="checkbox">
 							Keep me signed in
 						</span>
-						<button type="submit" class="btn btn-default">Login</button>
+						<button type="submit" class="btn btn-default" name="login">Login</button>
 					</form>
 					<br>
 					<a href="<?= ROOT ?>signup">Don't Havean account? sign up here</a>
