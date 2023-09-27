@@ -13,13 +13,13 @@
 
                     <h2>New User Signup!</h2>
                     <form method="post">
-                        <input name="name" type="text" placeholder="Name" />
+                        <input name="name" value="<?= isset($_POST['name']) ? $_POST['name'] : '';  ?>" type="text" placeholder="Name" />
                         <span style="font-size:14px;color:red;">
                             <?php
                             check_error("name");
                             ?>
                         </span>
-                        <input name="email" type="email" placeholder="Email Address" />
+                        <input name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '';  ?>" type="email" placeholder="Email Address" />
                         <span style="font-size:14px;color:red;">
                             <?php
                             check_error("email");

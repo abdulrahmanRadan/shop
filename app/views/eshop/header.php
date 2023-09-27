@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title><?= $data['page_title'] ?> | E-Shopper</title>
+    <title><?= $data['page_title'] ?> | pargShop</title>
     <link href="<?= ASSETS . THEME ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= ASSETS . THEME ?>/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?= ASSETS . THEME ?>/css/prettyPhoto.css" rel="stylesheet">
@@ -14,6 +14,9 @@
     <link href="<?= ASSETS . THEME ?>/css/animate.css" rel="stylesheet">
     <link href="<?= ASSETS . THEME ?>/css/main.css" rel="stylesheet">
     <link href="<?= ASSETS . THEME ?>/css/responsive.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
     <!--[if lt IE 9]>
     <script src="<?= ASSETS . THEME ?>/js/html5shiv.js"></script>
     <script src="<?= ASSETS . THEME ?>/js/respond.min.js"></script>
@@ -35,6 +38,9 @@
                             <ul class="nav nav-pills">
                                 <li><a href="#"><i class="fa fa-phone"></i> +967 779934918</a></li>
                                 <li><a href="#"><i class="fa fa-envelope"></i> info@e-shopper.com</a></li>
+                                <?php if (!empty($data['user_data'])) : ?>
+                                    <li><a href="#"><i class="fa fa-user"></i> <?= $data['user_data']->name ?></a></li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>
@@ -87,11 +93,18 @@
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+                                <?php if (!empty($data['user_data']) && $data['user_data']->rank == 'admin') : ?>
+                                    <li><a href="<?= ROOT ?>profile"><i class="fa fa-user"></i> Account</a></li>
+                                <?php endif; ?>
+
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                                 <li><a href="checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                 <li><a href="cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                <li><a href="<?= ROOT ?>login"><i class="fa fa-lock"></i> Login</a></li>
+                                <?php if (!empty($data['user_data'])) : ?>
+                                    <li><a href="<?= ROOT ?>logout"><i class="fa fa-lock"></i> logout</a></li>
+                                <?php else : ?>
+                                    <li><a href="<?= ROOT ?>login"><i class="fa fa-lock"></i> Login</a></li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>
@@ -120,7 +133,9 @@
                                         <li><a href="product-details.php">Product Details</a></li>
                                         <li><a href="checkout">Checkout</a></li>
                                         <li><a href="cart">Cart</a></li>
-                                        <li><a href="<?= ROOT ?>login">Login</a></li>
+                                        <?php if (empty($data['user_data'])) : ?>
+                                            <li><a href="<?= ROOT ?>login">Login</a></li>
+                                        <?php endif; ?>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>

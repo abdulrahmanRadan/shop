@@ -65,47 +65,44 @@ class User
     }
     public function login($POST)
     {
-        // echo $this->error;
-        if (isset($_POST['login'])) {
+        // if (isset($_POST['login'])) {
+        // show($POST);
+        $data = array();
+        $db = Database::getInstance();
 
-            $data = array();
-            $db = Database::getInstance();
-
-            $data['email']      = trim($POST['email']);
-            $data['password']   = trim($POST['password']);
-            /**
-             * preg_match() =>  function searches a string for pattern, returning true if the pattern exists, and false otherwise.
-             */
-            if (empty($data['email']) || !preg_match("/^[a-zA-Z_-]+@[a-zA-Z_-]+.[a-zA-Z_-]+$/", $data['email'])) {
-                $this->error['email'] = "please enter a valid email <br>";
-            }
-            if (strlen($data['password']) < 4) {
-                $this->error['password'] = " please the password must be ateleas 4 characters long  <br>";
-            }
-            /**
-             * check if The Email already exists 
-             */
-            if (empty($this->error)) {
-            }
-            // check for url address 
-            if (empty($this->error)) {
-                //seve
-
-                $sql = "SELECT * FROM `users` WHERE `email`=:email limit 1";
-                $result = $db->read($sql, $data);
-                if (is_array($result)) {
-                    // $this->error['check_email'] = "The email is already in use<br>";
-                    // echo $this->a;
-                    $_SESSION['a'] = $this->a[0];
-                    header("location:" . ROOT . "home");
-                    $this->a .= "<div class='alert alert-success'> Row Inserted</div>";
-                } else {
-                    $this->a .= "<div class='alert alert-success'> Row don't Inserted</div>";
-                    // echo $this->a;
-                }
-            }
-            $_SESSION['error'] = $this->error;
+        $data['email']      = trim($POST['email']);
+        $data['password']   = trim($POST['password']);
+        /**
+         * preg_match() =>  function searches a string for pattern, returning true if the pattern exists, and false otherwise.
+         */
+        if (empty($data['email']) || !preg_match("/^[a-zA-Z_-]+@[a-zA-Z_-]+.[a-zA-Z_-]+$/", $data['email'])) {
+            $this->error['email'] = "please enter a valid email <br>";
         }
+        if (strlen($data['password']) < 4) {
+            $this->error['password'] = " please the password must be ateleas 4 characters long  <br>";
+        }
+        /**
+         * check if The Email already exists 
+         */
+
+        // check for url address 
+        if (empty($this->error)) {
+            //seve
+            $sql = "SELECT * FROM `users` WHERE `email`=:email AND `password`=:password limit 1";
+            $result = $db->read($sql, $data);
+            // show($POST);
+            // show($POST);
+            if (is_array($result)) {
+                // echo $this->a;
+                $_SESSION['user_url'] = $result[0]->address;
+                header("location:" . ROOT . "home");
+                // $this->a .= "<div class='alert alert-success'> Row Inserted</div>";
+            }
+            $this->error['a'] = "wrong  email or password<br>";
+        }
+        $_SESSION['error'] = $this->error;
+        // $_SESSION['a'] = $this->a;
+        // }
     }
     public function get_user($url)
     {
@@ -128,5 +125,34 @@ class User
         }
 
         return $randomString;
-    }
+    } // end function 
+
+    public function check_login($redirect = false)
+    {
+        if (isset($_SESSION['user_url'])) {
+            $arr['url'] = $_SESSION['user_url'];
+            $query = "select * from `users` where address =:url limit 1";
+            $db = Database::getInstance();
+
+            $result = $db->read($query, $arr);
+            if (is_array($result)) {
+                return $result[0];
+            }
+        }
+        if ($redirect) {
+            header("location:" . ROOT . "login");
+            die;
+        }
+        return false;
+    } // end check login function
+
+    public function logout()
+    {
+        if (isset($_SESSION['user_url'])) {
+            unset($_SESSION['user_url']);
+        }
+        header("location:" . ROOT . "home");
+        die;
+    } // end check login logout
+
 }

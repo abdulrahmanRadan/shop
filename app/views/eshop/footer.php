@@ -91,6 +91,9 @@
                             <li><a href="#">Order Status</a></li>
                             <li><a href="#">Change Location</a></li>
                             <li><a href="#">FAQ’s</a></li>
+                            <?php if (!empty($data['user_data']) && $data['user_data']->rank == 'admin') : ?>
+                                <li><a href="<?= ROOT ?>admin">admin</a></li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
