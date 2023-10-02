@@ -43,14 +43,14 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>PATGshop | Admin </b></a>
+            <a href="<?= ROOT ?>" class="logo"><b>PATGshop | Admin </b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
                 <ul class="nav top-menu">
                     <!-- settings start -->
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="<?= ROOT ?>admin#">
                             <i class="fa fa-tasks"></i>
                             <span class="badge bg-theme">4</span>
                         </a>
@@ -60,7 +60,7 @@
                                 <p class="green">You have 4 pending tasks</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="<?= ROOT ?>admin#">
                                     <div class="task-info">
                                         <div class="desc">DashGum Admin Panel</div>
                                         <div class="percent">40%</div>
@@ -73,7 +73,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="<?= ROOT ?>admin#">
                                     <div class="task-info">
                                         <div class="desc">Database Update</div>
                                         <div class="percent">60%</div>
@@ -86,7 +86,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="<?= ROOT ?>admin#">
                                     <div class="task-info">
                                         <div class="desc">Product Development</div>
                                         <div class="percent">80%</div>
@@ -99,7 +99,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="<?= ROOT ?>admin#">
                                     <div class="task-info">
                                         <div class="desc">Payments Sent</div>
                                         <div class="percent">70%</div>
@@ -119,7 +119,7 @@
                     <!-- settings end -->
                     <!-- inbox dropdown start-->
                     <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="<?= ROOT ?>admin#">
                             <i class="fa fa-envelope-o"></i>
                             <span class="badge bg-theme">5</span>
                         </a>
@@ -129,7 +129,7 @@
                                 <p class="green">You have 5 new messages</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="<?= ROOT ?>admin#">
                                     <span class="photo"><img alt="avatar" src="<?= ASSETS . THEME ?>admin/img/ui-zac.jpg"></span>
                                     <span class="subject">
                                         <span class="from">Zac Snider</span>
@@ -141,7 +141,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="<?= ROOT ?>admin#">
                                     <span class="photo"><img alt="avatar" src="<?= ASSETS . THEME ?>admin/img/ui-divya.jpg"></span>
                                     <span class="subject">
                                         <span class="from">Divya Manian</span>
@@ -153,7 +153,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="<?= ROOT ?>admin#">
                                     <span class="photo"><img alt="avatar" src="<?= ASSETS . THEME ?>admin/img/ui-danro.jpg"></span>
                                     <span class="subject">
                                         <span class="from">Dan Rogers</span>
@@ -165,7 +165,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="<?= ROOT ?>admin#">
                                     <span class="photo"><img alt="avatar" src="<?= ASSETS . THEME ?>admin/img/ui-sherman.jpg"></span>
                                     <span class="subject">
                                         <span class="from">Dj Sherman</span>
@@ -177,7 +177,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">See all messages</a>
+                                <a href="<?= ROOT ?>admin#">See all messages</a>
                             </li>
                         </ul>
                     </li>
@@ -187,7 +187,7 @@
             </div>
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="<?= ROOT ?>logout">Logout</a></li>
                 </ul>
             </div>
         </header>

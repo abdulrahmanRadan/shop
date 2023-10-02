@@ -129,13 +129,15 @@ class User
 
     public function check_login($redirect = false)
     {
+        $db = Database::getInstance();
         if (isset($_SESSION['user_url'])) {
+            $arr['url'] = false;
             $arr['url'] = $_SESSION['user_url'];
             $query = "select * from `users` where address =:url limit 1";
-            $db = Database::getInstance();
-
             $result = $db->read($query, $arr);
-            if (is_array($result)) {
+            // show($result);
+            // show($result[0]->rank);
+            if (is_array($result) && $result[0]->rank == 'admin') {
                 return $result[0];
             }
         }
