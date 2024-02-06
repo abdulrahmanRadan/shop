@@ -60,4 +60,3 @@ Contributions are welcome! If you would like to contribute to this project, plea
 If you have any questions or feedback, please feel free to contact the project maintainer at [aboda123li123@gmail.com](mailto:aboda123li123@gmail.com).
 
 ---
-يرجى استبدال "your-username" في الروابط بمعرف المستخدم الخاص بك على GitHub. يمكنك أيضًا تخصيص المزيد من المحتوى وفقًا لمشروعك الفعلي.
