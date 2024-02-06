@@ -1,4 +1,4 @@
-مشكور على طلبك! فيما يلي مثال لمحتوى ملف README الخاص بمشروع "Shop with MVC PHP":
+
 
 # Shop with MVC PHP
 
