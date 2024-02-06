@@ -69,7 +69,7 @@ you needs to import the database file using XAMPP.
 
 // not yet
 
-**Note: This project is a work in progress**
+## <span style="color:red"> **Note: This project is a work in progress**</span>
 
 Please note that this project is currently under development and has not been completed yet. You may encounter some work that is subject to improvement and change at this stage. We appreciate your understanding and patience as we continue to work on enhancing and refining the project. Feel free to contribute or provide feedback to help us improve it further.
 
