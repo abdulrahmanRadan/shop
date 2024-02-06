@@ -44,6 +44,21 @@ To run this project, you need the following:
 - Web server (such as Apache or Nginx)
 - XAMPP or a similar PHP development environment (if running on Windows)
 
+## Database
+you needs to import the database file using XAMPP. Here are the step-by-step instructions:
+
+Start XAMPP and ensure that the MySQL service is running. You can do this by opening XAMPP and checking that "MySQL" has a checkmark next to it in the menu.
+Open a web browser and type "localhost/phpmyadmin" in the address bar.
+You will be redirected to the phpMyAdmin interface.
+Create a new database by clicking the "New" button in the left sidebar.
+Give the database a name of your choice for your project (e.g., "shop_db") and select the required character encoding, then click the "Create" button.
+Once the database is created, go to the "Import" tab at the top of the page.
+Click on the "Choose File" button and select the database file from the project (e.g., "shop_db.sql").
+Leave the other options as they are and click the "Go" button at the bottom of the page.
+phpMyAdmin will read the database file and import it into the database you created.
+Once the import is complete, a confirmation message will appear indicating the success of the operation.
+With this, you will have a ready-to-use database for your "Shop with MVC PHP" project. Please make sure to update the database connection information in the necessary project files to ensure proper communication with the database.
+
 ## Usage
 
 
