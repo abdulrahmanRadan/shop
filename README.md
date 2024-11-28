@@ -1,6 +1,6 @@
 
 
-# Shop with MVC PHP
+# Shop with MVC PHP 
 
 This is a web application project that implements a simple online shop using the Model-View-Controller (MVC) architectural pattern in PHP.
 
@@ -13,7 +13,7 @@ To download and run this project on your local machine, follow the instructions 
 1. Open a terminal.
 2. Clone the repository using the following command:
    ```
-   git clone https://github.com/abody-ali/shop.git
+   git clone https://github.com/abdulrahmanRadan/shop.git
    ```
 3. Change into the project directory:
    ```
